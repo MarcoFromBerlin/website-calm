@@ -1,0 +1,121 @@
+@import "utilities";
+@import "variables";
+@import "media";
+@import "functions";
+@import "menu";
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: $font-family-primary;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.hide {
+  visibility: hidden;
+}
+#home-a {
+  height: 100vh;
+  max-height: $page-max-height;
+  background-color: $bg-color-first-page;
+}
+
+#header {
+  height: 10vh;
+}
+
+.home-a-img img {
+  position: relative;
+  width: 600px;
+  height: 400px;
+
+  // background: url("../images/clean-ipad-screen-mockup-desktop.png") no-repeat
+  //   center center/cover;
+}
+
+.hero {
+  // max-width: 10%;
+  @include center-x-y(90vh, 80vw);
+}
+.hero-title p {
+  font-size: 3rem;
+}
+
+.logo img {
+  width: 30px;
+}
+
+@include media($tablet) {
+  :root {
+    background-color: purple;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat($columns-tablet, 1fr);
+    gap: 1rem;
+    margin-bottom: 20px;
+  }
+
+  @for $i from 1 through $columns-tablet {
+    .col-m-#{$i} {
+      grid-column: span $i;
+      padding: 20px 15px;
+      color: white;
+      background-color: orange;
+    }
+    .col-m-#{$i}::after {
+      content: "Tablet #{$i}";
+    }
+  }
+  .hide-tablet {
+    visibility: hidden;
+  }
+}
+
+@include media($phone) {
+  :root {
+    background-color: dodgerblue;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat($columns-phone, 1fr);
+    gap: 1rem;
+    margin-bottom: 20px;
+  }
+
+  @for $i from 1 through $columns-phone {
+    .col-lg-#{$i} {
+      grid-column: span $i;
+      padding: 20px 15px;
+      color: white;
+      background-color: gray;
+    }
+    .col-lg-#{$i}::after {
+      content: "Phone #{$i}";
+    }
+  }
+
+  .hide {
+    visibility: visible;
+  }
+
+  .hide-tablet {
+    visibility: hidden;
+  }
+  .hide-phone {
+    visibility: hidden;
+  }
+}

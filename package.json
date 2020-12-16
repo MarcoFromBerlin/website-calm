@@ -1,0 +1,14 @@
+{
+  "name": "website-calm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --source-map dist/css/main.css.map --output-style compressed -w scss -o dist/css -- recursive "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
