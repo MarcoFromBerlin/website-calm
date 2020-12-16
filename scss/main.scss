@@ -3,6 +3,8 @@
 @import "media";
 @import "functions";
 @import "menu";
+@import "buttons";
+@import "typography";
 
 *,
 ::before,
@@ -27,7 +29,7 @@
 }
 #home-a {
   height: 100vh;
-  max-height: $page-max-height;
+  // max-height: $page-max-height;
   background-color: $bg-color-first-page;
 }
 
@@ -54,6 +56,57 @@
 
 .logo img {
   width: 30px;
+}
+
+#home-b {
+  .img-smartphone img {
+    width: 150%;
+  }
+
+  .description-app-test {
+    & h1 {
+      font-size: 4rem;
+    }
+    & p {
+      font-size: 1.4rem;
+      font-weight: $thin;
+    }
+    & button {
+      @include center-x-y(12vh, 100%);
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      & i {
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+#home-c {
+  // height: 70vh;
+  .items > div {
+    @include center-x-y(100%, 100%);
+
+    & p {
+      font-size: 1.3rem;
+      font-weight: $thin;
+    }
+    & img {
+      @include center-x-y(100%, 90%);
+    }
+  }
+}
+#footer {
+  height: 10vh;
+
+  background-color: $bg-color-first-page;
+
+  @include center-x-y(100%, 100%);
+
+  & p {
+    font-size: 1.1rem;
+    font-weight: $thin;
+  }
 }
 
 @include media($tablet) {
