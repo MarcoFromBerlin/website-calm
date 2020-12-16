@@ -29,50 +29,60 @@
 }
 #home-a {
   height: 100vh;
-  // max-height: $page-max-height;
+  max-height: $page-max-height;
   background-color: $bg-color-first-page;
-}
 
-#header {
-  height: 10vh;
-}
+  .container {
+    // margin: 0;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+  }
 
-.home-a-img img {
-  position: relative;
-  width: 600px;
-  height: 400px;
+  #header {
+    height: 10vh;
+  }
 
-  // background: url("../images/clean-ipad-screen-mockup-desktop.png") no-repeat
-  //   center center/cover;
-}
+  .home-a-img img {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    right: 30px;
 
-.hero {
-  // max-width: 10%;
-  @include center-x-y(90vh, 80vw);
-}
-.hero-title p {
-  font-size: 3rem;
-}
+    // background: url("../images/clean-ipad-screen-mockup-desktop.png") no-repeat
+    //   center center/cover;
+  }
 
-.logo img {
-  width: 30px;
-}
+  .hero {
+    // max-width: 10%;
+    // @include center-x-y(90vh, 80vw);
+  }
+  .hero-title p {
+    font-size: 3rem;
+  }
 
+  .logo img {
+    width: 30px;
+  }
+}
 #home-b {
+  // height: 100vh;
+  max-height: $page-max-height;
   .img-smartphone img {
-    width: 150%;
+    width: 130%;
   }
 
   .description-app-test {
     & h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     & p {
       font-size: 1.4rem;
       font-weight: $thin;
     }
     & button {
-      @include center-x-y(12vh, 100%);
+      @include center-x-y(70px, 100%);
       text-transform: capitalize;
       font-size: 1.2rem;
       & i {
@@ -83,7 +93,9 @@
 }
 
 #home-c {
-  // height: 70vh;
+  // height: 40vh;
+  max-height: 400px;
+  margin-bottom: 5rem;
   .items > div {
     @include center-x-y(100%, 100%);
 
@@ -97,7 +109,7 @@
   }
 }
 #footer {
-  height: 10vh;
+  // height: 10vh;
 
   background-color: $bg-color-first-page;
 
